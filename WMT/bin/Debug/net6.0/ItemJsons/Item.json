@@ -1,0 +1,22 @@
+{
+    "itemConfig": {
+      "locations": [
+        {
+          "id": "040070b7-0faf-4d11-9ece-cb6bf5315c97",
+          "label": "B1-01-01-05",
+          "items": [
+            {"articleid": "ART001", "amount": 5},
+            {"articleid": "ART003", "amount": 7}
+          ]
+        },
+        {
+          "id": "7920ad90-2b92-4f31-9768-8a2e0a278164",
+          "label": "B1-01-02-06",
+          "items": [
+            {"articleid": "ART002", "amount": 20}
+          ]
+        }
+      ]
+    }
+  }
+  

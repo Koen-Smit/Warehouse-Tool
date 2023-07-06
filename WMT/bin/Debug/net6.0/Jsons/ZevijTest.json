@@ -1,0 +1,420 @@
+{
+    "config": {
+      "carrierTypes": [
+        {
+          "id": "Groene Krat",
+          "positions": [],
+          "dimensions": {
+            "length": 400,
+            "width": 500,
+            "height": 450
+          },
+          "limitations": {
+            "maxWeight": 25,
+            "maxVolume": 40
+          }
+        },
+        {
+          "id": "Blauwe Krat",
+          "positions": [],
+          "dimensions": {
+            "length": 400,
+            "width": 500,
+            "height": 600
+          },
+          "limitations": {
+            "maxWeight": 25,
+            "maxVolume": 60
+          }
+        },
+        {
+            "id": "Pallet",
+            "positions": [],
+            "dimensions": {
+              "length": 200,
+              "width": 800,
+              "height": 1200
+            },
+            "limitations": {
+              "maxWeight": 500,
+              "maxVolume": 1200
+            }
+          }
+      ],
+      "locationTypes": [
+        {
+          "id": "Plankvakken",
+          "positionDefinitions": [],
+          "dimensions": {
+            "length": 400,
+            "width": 600,
+            "height": 1000
+          },
+          "limitations": {
+            "maxWeight": 500,
+            "maxVolume": 240
+          },
+          "properties": {
+            "stocklocation": true,
+            "flowlocation": false
+          }
+        },
+        {
+          "id": "Doorrolstellingen",
+          "positionDefinitions": [],
+          "dimensions": {
+            "length": 400,
+            "width": 1500,
+            "height": 100
+          },
+          "limitations": {
+            "maxWeight": 500,
+            "maxVolume": 60
+          },
+          "properties": {
+            "stocklocation": true,
+            "flowlocation": false
+          }
+        },
+        {
+          "id": "Kardex",
+          "positionDefinitions": [],
+          "dimensions": {
+            "length": 200,
+            "width": 300,
+            "height": 100
+          },
+          "limitations": {
+            "maxWeight": 500,
+            "maxVolume": 6
+          },
+          "properties": {
+            "stocklocation": true,
+            "flowlocation": false
+          }
+        },
+        {
+          "id": "Pallet_Bulk",
+          "positionDefinitions": [],
+          "dimensions": {
+            "length": 1000,
+            "width": 1300,
+            "height": 2000
+          },
+          "limitations": {
+            "maxWeight": 500,
+            "maxVolume": 2600
+          },
+          "properties": {
+            "stocklocation": true,
+            "flowlocation": false
+          }
+        },
+        {
+            "id": "Consolidatie",
+            "positionDefinitions": [],
+            "dimensions": {
+              "length": 1000,
+              "width": 1300,
+              "height": 2000
+            },
+            "limitations": {
+              "maxWeight": 500,
+              "maxVolume": 2600
+            },
+            "properties": {
+              "stocklocation": true,
+              "flowlocation": false
+            }
+          }
+      ],
+      "articles": [
+        {
+          "id": "Emmer",
+          "identifiers": {
+            "label": "4400008163787"
+          },
+          "description": "Emmer",
+          "dimensions": {
+            "length": 350,
+            "width": 350,
+            "height": 500,
+            "weight": 750,
+            "volume": 62.25
+          }
+        },
+        {
+          "id": "Schroevendraaier",
+          "identifiers": {
+            "label": "7610733247493"
+          },
+          "description": "Schroevendraaier",
+          "dimensions": {
+            "length": 40,
+            "width": 40,
+            "height": 275,
+            "weight": 75,
+            "volume": 0.28
+          }
+        },
+        {
+          "id": "Kit_Cylinder",
+          "identifiers": {
+            "label": "4041248200452"
+          },
+          "description": "Kit cylinder",
+          "dimensions": {
+            "length": 40,
+            "width": 40,
+            "height": 400,
+            "weight": 150,
+            "volume": 0.64
+          }
+        },
+        {
+          "id": "Maskers_100",
+          "identifiers": {
+            "label": "4500343400434"
+          },
+          "description": "Doos met 100 maskers",
+          "dimensions": {
+            "length": 100,
+            "width": 300,
+            "height": 50,
+            "weight": 300,
+            "volume": 1.5
+          }
+        },
+        {
+          "id": "Werkhandschoenen_10",
+          "identifiers": {
+            "label": "4500540450450"
+          },
+          "description": "Doos met 10 paar werkhandschoenen",
+          "dimensions": {
+            "length": 100,
+            "width": 300,
+            "height": 100,
+            "weight": 500,
+            "volume": 3
+          }
+        },
+        {
+            "id": "Hamer",
+            "identifiers": {
+              "label": "7408400342349"
+            },
+            "description": "Hamer",
+            "dimensions": {
+              "length": 45,
+              "width": 100,
+              "height": 200,
+              "weight": 250,
+              "volume": 900
+            }
+          },
+          {
+            "id": "Gereedschapkist",
+            "identifiers": {
+              "label": "7692002373898"
+            },
+            "description": "Gereedschapkist",
+            "dimensions": {
+              "length": 300,
+              "width": 800,
+              "height": 300,
+              "weight": 250,
+              "volume": 72
+            }
+          },
+          {
+            "id": "Lucht_Haken",
+            "identifiers": {
+              "label": "6438700000323"
+            },
+            "description": "Lucht Haken",
+            "dimensions": {
+              "length": 20,
+              "width": 40,
+              "height": 200,
+              "weight": 200,
+              "volume": 160
+            }
+          }
+      ]
+    },
+    "layout": {
+      "zones": [
+        {
+          "label": "Plankvakken_1",
+          "locations": [
+            {
+              "Range": {
+                "start": {
+                  "label": "A1-01-01-01",
+                  "type": "Plankvakken"
+                },
+                "end": {
+                  "label": "A1-02-04-05",
+                  "type": "Plankvakken"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "Plankvakken_2",
+          "locations": [
+            {
+              "Range": {
+                "start": {
+                  "label": "B1-01-01-01",
+                  "type": "Plankvakken"
+                },
+                "end": {
+                  "label": "B1-02-04-05",
+                  "type": "Plankvakken"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "Doorrol",
+          "locations": [
+            {
+              "Range": {
+                "start": {
+                  "label": "P1-01-01-01",
+                  "type": "Doorrolstellingen"
+                },
+                "end": {
+                  "label": "P1-01-04-05",
+                  "type": "Doorrolstellingen"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "Kardex_1",
+          "locations": [
+            {
+              "Range": {
+                "start": {
+                  "label": "K1-01-01-01",
+                  "type": "Kardex"
+                },
+                "end": {
+                  "label": "K1-03-04-08",
+                  "type": "Kardex"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "Kardex_2",
+          "locations": [
+            {
+              "Range": {
+                "start": {
+                  "label": "K2-01-01-01",
+                  "type": "Kardex"
+                },
+                "end": {
+                  "label": "K2-03-04-08",
+                  "type": "Kardex"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "PalletBulk_1",
+          "locations": [
+            {
+              "Range": {
+                "start": {
+                  "label": "G1-01-01-01",
+                  "type": "Pallet_Bulk"
+                },
+                "end": {
+                  "label": "G1-02-01-05",
+                  "type": "Pallet_Bulk"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "PalletBulk_2",
+          "locations": [
+            {
+              "Range": {
+                "start": {
+                  "label": "H1-01-01-01",
+                  "type": "Pallet_Bulk"
+                },
+                "end": {
+                  "label": "H1-02-01-05",
+                  "type": "Pallet_Bulk"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "Palletpick",
+          "locations": [
+            {
+              "Range": {
+                "start": {
+                  "label": "D1-01-01-01",
+                  "type": "Pallet_Bulk"
+                },
+                "end": {
+                  "label": "D1-02-01-05",
+                  "type": "Pallet_Bulk"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "Consolidatie",
+          "locations": [
+            {
+              "Range": {
+                "start": {
+                  "label": "E1-01-01-01",
+                  "type": "Consolidatie"
+                },
+                "end": {
+                  "label": "E1-01-01-12",
+                  "type": "Consolidatie"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "Expedition",
+          "locations": []
+        },
+        {
+          "label": "Assembly_Zone",
+          "locations": []
+        },
+        {
+          "label": "Inbound",
+          "locations": []
+        }
+      ]
+    },
+    "content": {
+      "carriers": [],
+      "locationContent": [],
+      "carrierContent": []
+    }
+  }
