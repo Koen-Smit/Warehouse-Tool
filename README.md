@@ -20,17 +20,17 @@ All commands are: `help`, `json.read`, `json.write`, `item.read`, `item.write`.
 You can choose to use the menu, there it is just some switch cases that lets the user choose which option they want to use.
 
 #### Options
-##### help
+##### "help"
 Gives the user a list of commands they can use, they are listed underneath here.
-##### json.read
+##### "json.read"
 Lets the user read out a JSON file, it asks which JSON it wants to read and then puts it inside the API, there it creates a testing environment for the programmers working on the warehouse software, so its easy and quick to test the thing they make.
 It is used because every warehouse is a little different but has the same setup, so with settings it can be set up for testing.
-##### json.write
+##### "json.write"
 This lets the user write the created JSON that they maybe changed/edited so it can later be used to test another time, so you can switch between warehouses and back up the warehouse for later.
 When a JSON is written it save it at `bin\Debug\net6.0\Jsons`, here all JSON files are stored.
-##### item.read
+##### "item.read"
 Lets the user read out a JSON file, this time for items, a warehouse is created but when used for testing it is sometimes filled with items, items can vary per warehouse, but the setup stays the same.
 So it is kinda used as a second setting file, when read it fills the already created warehouse with items, when a warehouse has yet to be created it will tell the user this so the warehouse is set up first.
-##### item.write
+##### "item.write"
 This lets the user write the created JSON for the item list they made or edited so it can later be used to test another time, so you can back up the items stored in that warehouse and use it for later or put it inside another warehouse.
 When a JSON is written it save it at `bin\Debug\net6.0\ItemJsons`, here all JSON files are stored.
