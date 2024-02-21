@@ -13,6 +13,9 @@ The API used here was specifically created for the company where my intership wa
 The development started as a menu type of console app but later on i added the option to use it as a commandline so its faster and more efficient to use.
 
 ## Documentation:
-There are multiple commands or menu-options that can be used, I put in a `Commandhelp` so it is more accessible for people. 
+#### Commands
+There are multiple commands or menu-options that can be used, I put in a help command to let the user know what commands there are and what options you have so it is more accessible for people. 
+All commands are: `help`, `json.read`, `json.write`, `item.read`, `item.write`.
+*(There are checks so the user is send to the `help` command when a wrong string is entered.)*
 
 
