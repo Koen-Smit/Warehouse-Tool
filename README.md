@@ -17,5 +17,12 @@ The development started as a menu type of console app but later on i added the o
 There are multiple commands or menu-options that can be used, I put in a help command to let the user know what commands there are and what options you have so it is more accessible for people. 
 All commands are: `help`, `json.read`, `json.write`, `item.read`, `item.write`.
 *(There are checks so the user is send to the `help` command when a wrong string is entered.)*
+You can choose to use the menu, there it is just some switch cases that lets the user choose which option they want to use.
 
+#### Options
+#####`help`
+#####`json.read`
+#####`json.write`
+#####`item.read`
+#####`item.write`
 
