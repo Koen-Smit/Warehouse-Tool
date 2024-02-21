@@ -11,6 +11,7 @@ I made the JSON setting files myself from the already existent templates I recie
 ## Development:
 The API used here was specifically created for the company where my intership was. I used Docker to develop and test the API/app.
 The development started as a menu type of console app but later on i added the option to use it as a commandline so its faster and more efficient to use.
+For version control I used Bitbucket through Sourcetree, later on with the project I put everything on Github.
 
 ## Documentation:
 #### Commands
@@ -39,6 +40,35 @@ When a JSON is written it save it at `bin\Debug\net6.0\ItemJsons`, here all JSON
 
 ## Code snippets:
 
+### Models:
+#### Example of some classes, picked from multiple files:
+```
+        public class Type
+        {
+            public string Id { get; set; }
+            public string LabelPattern { get; set; }
+            public Dimensions Dimensions { get; set; }
+            public Limitations Limitations { get; set; }
+            public List<string> PositionLabels { get; set; }
+        }
+
+        public class Limitations
+        {
+            [JsonProperty("maxWeight")]
+            public int MaxWeight { get; set; }
+            [JsonProperty("maxVolume")]
+            public int MaxVolume { get; set; }
+        }
+
+        public class Zones
+        {
+            public string? Id { get; set; }
+            public Identifiers? Identifiers { get; set; }
+            public List<LocationRange> Locations { get; set; }
+        }
+```
+
+### Jsons:
 #### example of item JSON, filled with **FAKE** test-data:
 *(itemconfig, the locations are for what label the location has, items are for what articles and how much are in this specific location, the ID is for API purposes.)*
 ```
