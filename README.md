@@ -20,9 +20,9 @@ All commands are: `help`, `json.read`, `json.write`, `item.read`, `item.write`.
 You can choose to use the menu, there it is just some switch cases that lets the user choose which option they want to use.
 
 #### Options
-#####`help`
-#####`json.read`
-#####`json.write`
-#####`item.read`
-#####`item.write`
+##### help
+##### json.read
+##### json.write
+##### item.read
+##### item.write
 
