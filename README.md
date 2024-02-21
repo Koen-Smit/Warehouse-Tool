@@ -73,3 +73,83 @@ When a JSON is written it save it at `bin\Debug\net6.0\ItemJsons`, here all JSON
     }
 }
 ```
+
+#### example of a warehouse JSON, filled with **FAKE** test-data:
+```
+{
+    "config": {
+        "carrierTypes": [
+            {
+                "id": "CarrierTestType1",
+                "dimensions": {
+                    "length": 100,
+                    "width": 200,
+                    "height": 10
+                },
+                "limitations": {
+                    "maxWeight": 150,
+                    "maxVolume": 20
+                },
+                "positions": []
+            }
+        ],
+        "locationTypes": [
+            {
+                "id": "consolidationTest",
+                "dimensions": {
+                    "length": 10,
+                    "width": 1000,
+                    "height": 10
+                },
+                "limitations": {
+                    "maxWeight": 500,
+                    "maxVolume": 10000
+                }
+            }
+        ],
+        "articles": [
+            {
+                "id": "ART001",
+                "identifiers": {
+                    "label": "100001010"
+                },
+                "description": "SmallTestArticle1",
+                "dimensions": {
+                    "length": 5,
+                    "width": 50,
+                    "height": 10,
+                    "weight": 50,
+                    "volume": 3
+                }
+            }
+        ]
+    },
+    "layout": {
+        "zones": [
+            {
+                "label": "BulkTestZone_1",
+                "locations": [
+                    {
+                        "Range": {
+                            "start": {
+                                "label": "B1-01-01-01",
+                                "type": "vak_medium"
+                            },
+                            "end": {
+                                "label": "B1-02-03-10",
+                                "type": "vak_medium"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "content": {
+        "carriers": {},
+        "locationContent": {},
+        "carrierContent": {}
+    }
+}
+```
+
