@@ -75,6 +75,7 @@ When a JSON is written it save it at `bin\Debug\net6.0\ItemJsons`, here all JSON
 ```
 
 #### example of a warehouse JSON, filled with **FAKE** test-data:
+*(It configures: Carriertypes, Locationtypes, Articletypes, the layout and it has content options.)*
 ```
 {
     "config": {
