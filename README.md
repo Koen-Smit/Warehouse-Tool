@@ -1,7 +1,7 @@
 # Warehouse-Tool
 Curio Internship: 6 februari t/m 7 juli.
 ***
-## Usage:
+### Usage:
 Console-based tool that can be used through the commandline, it can load a JSON setting file that sends the data to the API, 
 then sets up a test-warehouse and can be used to save alternate settings that were changed later on.
 
