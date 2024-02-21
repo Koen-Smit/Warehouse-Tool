@@ -39,7 +39,7 @@ When a JSON is written it save it at `bin\Debug\net6.0\ItemJsons`, here all JSON
 
 ## Code snippets:
 
-#### example of item JSON, filled with __FAKE__ test-data:
+#### example of item JSON, filled with **FAKE** test-data:
 *(itemconfig, the locations are for what label the location has, items are for what articles and how much are in this specific location, the ID is for API purposes.)*
 ```
 {
