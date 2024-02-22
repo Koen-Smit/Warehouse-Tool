@@ -44,13 +44,13 @@ When a JSON is written it save it at `bin\Debug\net6.0\ItemJsons`, here all JSON
 ####  Get/delete example, used multiple times for different API calls.:
 *(This code here is for "Zones", but it is also used for things like Carriers, Locations and Items. It is placed inside a loop to delete the whole warehouse, like a reset.)*
 ```C#
-var zoneResponse = await client.GetAsync("https://localhost:2902/zones");
+var zoneResponse = await client.GetAsync("https://localhost:8080/zones");
 zoneResponse.EnsureSuccessStatusCode();
 var zoneContent = await zoneResponse.Content.ReadAsStringAsync();
 var zoneDelete = JsonConvert.DeserializeObject<List<Locations.Zone>>(zoneContent);
 foreach (var zone in zoneDelete)
 {
-    var deleteResponse = await client.DeleteAsync($"https://localhost:2902/zones/{zone.Id}");
+    var deleteResponse = await client.DeleteAsync($"https://localhost:8080/zones/{zone.Id}");
     deleteResponse.EnsureSuccessStatusCode();
 }
 Console.WriteLine("Zones deleted");
