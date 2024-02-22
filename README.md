@@ -43,7 +43,7 @@ When a JSON is written it save it at `bin\Debug\net6.0\ItemJsons`, here all JSON
 ### Code:
 #### A snippet that removes an SSL error:
 *(Because of some circumstances inside the code and API caused the API to not work correctly or completely not, so i put in a bit of "unsafe" code to remove the SSL check alltogether.)*
-```
+```C#
 var handler = new HttpClientHandler
 {
 ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
@@ -56,7 +56,7 @@ client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("app
 ### Models:
 #### Example of some classes, picked from multiple files:
 *(It contains some different types of classes containing, type, limitations and zones. just examples from different files.)*
-```
+```C#
         public class Type
         {
             public string Id { get; set; }
@@ -85,7 +85,7 @@ client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("app
 ### Jsons:
 #### example of item JSON, filled with **FAKE** test-data:
 *(itemconfig, the locations are for what label the location has, items are for what articles and how much are in this specific location, the ID is for API purposes.)*
-```
+```json
 {
     "itemConfig": {
         "locations": [
@@ -120,7 +120,7 @@ client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("app
 
 #### example of a warehouse JSON, filled with **FAKE** test-data:
 *(It configures: Carriertypes, Locationtypes, Articletypes, the layout and it has content options.)*
-```
+```json
 {
     "config": {
         "carrierTypes": [
