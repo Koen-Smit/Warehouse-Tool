@@ -71,7 +71,58 @@ foreach (var zone in zoneDelete)
 Console.WriteLine("Zones deleted");
 ```
 
-####  Loop through all carriertypes and write them into a list:
+#### Retrieve positionid that belongs to the location:
+*(Gets location of the positionid.)*
+```C#
+static async Task<string> RetrievePositionIdForLocation(HttpClient httpClient, string locationsUrl, string locationId)
+{
+    var url = $"{locationsUrl}/{locationId}";
+    var response = await httpClient.GetAsync(url);
+    response.EnsureSuccessStatusCode();
+    var jsonData = await response.Content.ReadAsStringAsync();
+    var data = JObject.Parse(jsonData);
+
+    var positions = data["positions"] as JArray;
+    if (positions != null && positions.Count > 0)
+    {
+        var position = positions[0];
+        return position["id"].ToString();
+    }
+
+    return null;
+}
+```
+
+#### Writes JSON file:
+*(A piece of code that writes the JSON files needed for testing and backing up.)*
+```C#
+// 
+if (locationsArray.HasValues)
+{
+    string jsonData = itemConfig.ToString();
+
+    string folderPath = "ItemJsons";
+    if (!Directory.Exists(folderPath))
+        Directory.CreateDirectory(folderPath);
+
+    string fileName = GetFileNameFromUser();
+    if (string.IsNullOrEmpty(fileName))
+    {
+        Console.WriteLine("No file name entered");
+        return;
+    }
+
+    string filePath = Path.Combine(folderPath, $"{fileName}.json");
+    await File.WriteAllTextAsync(filePath, jsonData);
+    Console.WriteLine($"Data written to {filePath}");
+}
+else
+{
+    Console.WriteLine("No locations with items found. Skipping JSON writing.");
+}
+```
+
+#### Loop through all carriertypes and write them into a list:
 *(Loops through all carrietypes, this is used for multiple purposes so it lists the items needed for putting inside of the API.)*
 ```C#
 var carrierTypes = new List<CarrierTypes.Root>();
