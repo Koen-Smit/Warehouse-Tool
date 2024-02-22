@@ -41,6 +41,21 @@ When a JSON is written it save it at `bin\Debug\net6.0\ItemJsons`, here all JSON
 ## Code snippets:
 
 ### Code:
+####  Get/delete example, used multiple times for different API calls.:
+*(This code here is for "Zones", but it is also used for things like Carriers, Locations and Items. It is placed inside a loop to delete the whole warehouse, like a reset.)*
+```C#
+var zoneResponse = await client.GetAsync("https://localhost:2902/zones");
+zoneResponse.EnsureSuccessStatusCode();
+var zoneContent = await zoneResponse.Content.ReadAsStringAsync();
+var zoneDelete = JsonConvert.DeserializeObject<List<Locations.Zone>>(zoneContent);
+foreach (var zone in zoneDelete)
+{
+    var deleteResponse = await client.DeleteAsync($"https://localhost:2902/zones/{zone.Id}");
+    deleteResponse.EnsureSuccessStatusCode();
+}
+Console.WriteLine("Zones deleted");
+```
+
 #### A snippet that removes an SSL error:
 *(Because of some circumstances inside the code and API caused the API to not work correctly or completely not, so i put in a bit of "unsafe" code to remove the SSL check alltogether.)*
 ```C#
@@ -52,6 +67,7 @@ using var client = new HttpClient(handler);
 client.DefaultRequestHeaders.Accept.Clear();
 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 ```
+
 
 ### Models:
 #### Example of some classes, picked from multiple files:
