@@ -41,6 +41,21 @@ When a JSON is written it save it at `bin\Debug\net6.0\ItemJsons`, here all JSON
 ## Code snippets:
 
 ### Code:
+####  Determine the number of iterations needed for each changing part of the label.:
+*(Parse and calculate the number of iterations.)*
+```C#
+int numIterations = 1;
+for (int i = 3; i >= 0; i--)
+{
+    if (startParts[i] != endParts[i])
+    {
+        int startNum = int.Parse(startParts[i]);
+        int endNum = int.Parse(endParts[i]);
+        numIterations *= (endNum - startNum + 1);
+    }
+}
+```
+
 ####  Get/delete example, used multiple times for different API calls.:
 *(This code here is for "Zones", but it is also used for things like Carriers, Locations and Items. It is placed inside a loop to delete the whole warehouse, like a reset.)*
 ```C#
