@@ -41,7 +41,7 @@ When a JSON is written it save it at `bin\Debug\net6.0\ItemJsons`, here all JSON
 ## Code snippets:
 
 ### Code:
-####  Determine the number of iterations needed for each changing part of the label.:
+####  Determine the number of iterations needed for each changing part of the label:
 *(Parse and calculate the number of iterations.)*
 ```C#
 int numIterations = 1;
@@ -56,7 +56,7 @@ for (int i = 3; i >= 0; i--)
 }
 ```
 
-####  Get/delete example, used multiple times for different API calls.:
+####  Get/delete example, used multiple times for different API calls:
 *(This code here is for "Zones", but it is also used for things like Carriers, Locations and Items. It is placed inside a loop to delete the whole warehouse, like a reset.)*
 ```C#
 var zoneResponse = await client.GetAsync("https://localhost:8080/zones");
@@ -69,6 +69,32 @@ foreach (var zone in zoneDelete)
     deleteResponse.EnsureSuccessStatusCode();
 }
 Console.WriteLine("Zones deleted");
+```
+
+####  Loop through all carriertypes and write them into a list:
+*(Loops through all carrietypes, this is used for multiple purposes so it lists the items needed for putting inside of the API.)*
+```C#
+var carrierTypes = new List<CarrierTypes.Root>();
+foreach (var carriertype in JArray.Parse(getResponseString))
+{
+    var newCarriertype = new CarrierTypes.Root
+    {
+        Id = (string)carriertype["id"],
+        Positions = new List<Position>(),
+        Dimensions = new CarrierTypes.Dimensions
+        {
+            Length = (int)carriertype["dimensions"]["length"],
+            Width = (int)carriertype["dimensions"]["width"],
+            Height = (int)carriertype["dimensions"]["height"]
+        },
+        Limitations = new CarrierTypes.Limitations
+        {
+            MaxWeight = (int)carriertype["limitations"]["maxWeight"],
+            MaxVolume = (int)carriertype["limitations"]["maxVolume"]
+        },
+    };
+    carrierTypes.Add(newCarriertype);
+}
 ```
 
 #### A snippet that removes an SSL error:
