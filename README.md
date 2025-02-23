@@ -1,48 +1,52 @@
-# Warehouse-Tool
-Curio Internship: 6 februari t/m 7 juli.
+# Curio MBO Jaar 2, Stageperiode 1: Warehouse-Tool (2023)
+- Stageperiode: (06-02-2023 / 07-07-2023)
+- Stage-opdracht: voldaan
+- Stack: (C#, JSON, Docker)
 
-***
-## Usage:
-*(Not useable anymore, no access to API etc.)*
-Console-based tool that can be used through the commandline, it can load a JSON setting file that sends the data to the API, 
-then sets up a test-warehouse and can be used to save alternate settings that were changed later on. 
-I made the JSON setting files myself from the already existent templates I recieved.
+## Project Overview
+Dit project betreft een console-gebaseerde tool die via de commandline gebruikt kan worden. De tool laadt JSON-configuratiebestanden en verstuurt deze naar een API, waarmee een test-warehouse wordt opgezet. Vervolgens kunnen aangepaste instellingen worden opgeslagen voor later gebruik. De JSON-bestanden zijn door mij gemaakt op basis van bestaande templates die ik heb ontvangen samen met de API.
 
-## Development:
-The API used here was specifically created for the company where my intership was. I used Docker to develop and test the API/app.
-The development started as a menu type of console app but later on i added the option to use it as a commandline so its faster and more efficient to use.
-For version control I used Bitbucket through Sourcetree, later on with the project I put everything on Github.
+**Belangrijk:** Deze applicatie is niet langer bruikbaar. Ik kreeg de opdracht om de API van dit bedrijf te gebruiken voor dit project, maar ik heb nu geen toegang meer. Wel heb ik alle gegevens van de voorbeeld-code vervangen door testdata die geen verband houdt met de oorspronkelijke data van het bedrijf. Alles is goed gedocumenteerd en de opdracht was vrijwel afgerond aan het einde van mijn stageperiode.
 
-## Documentation:
-#### Commands
-There are multiple commands or menu-options that can be used, I put in a help command to let the user know what commands there are and what options you have so it is more accessible for people. 
-All commands are: `help`, `json.read`, `json.write`, `item.read`, `item.write`.
-*(There are checks so the user is send to the `help` command when a wrong string is entered.)*
-You can choose to use the menu, there it is just some switch cases that lets the user choose which option they want to use.
+## Terugblik / Verbetering
+- Terugkijkend op deze code, jaren later, zie ik honderden verbeterpunten. Een van de grootste verbeterpunten is objectgeoriënteerd programmeren (OOP); veel code staat nu in enkele bestanden in plaats van goed gestructureerde klassen. Daarnaast is de code soms slordig en kan het netter en beter leesbaar worden gemaakt. Ik kan me ook voorstellen dat de manier waarop ik dingen heb aangepakt veel efficiënter had gekund en dat sommige onderdelen dubbel voorkomen, **maar het werkte wel!**
 
-### Options
-##### - "help"
-Gives the user a list of commands they can use, they are listed underneath here.
-##### - "json.read"
-Lets the user read out a JSON file, it asks which JSON it wants to read and then puts it inside the API, there it creates a testing environment for the programmers working on the warehouse software, so its easy and quick to test the thing they make.
-It is used because every warehouse is a little different but has the same setup, so with settings it can be set up for testing.
-##### - "json.write"
-This lets the user write the created JSON that they maybe changed/edited so it can later be used to test another time, so you can switch between warehouses and back up the warehouse for later.
-When a JSON is written it save it at `bin\Debug\net6.0\Jsons`, here all JSON files are stored.
-##### - "item.read"
-Lets the user read out a JSON file, this time for items, a warehouse is created but when used for testing it is sometimes filled with items, items can vary per warehouse, but the setup stays the same.
-So it is kinda used as a second setting file, when read it fills the already created warehouse with items, when a warehouse has yet to be created it will tell the user this so the warehouse is set up first.
-##### - "item.write"
-This lets the user write the created JSON for the item list they made or edited so it can later be used to test another time, so you can back up the items stored in that warehouse and use it for later or put it inside another warehouse.
-When a JSON is written it save it at `bin\Debug\net6.0\ItemJsons`, here all JSON files are stored.
+- Hoewel ik de code zeker flink zou kunnen verbeteren, kies ik ervoor om dit project niet aan te passen. Dit was mijn **complete** stageproject en ik wil het behouden als een herinnering aan hoe ver ik ben gekomen in mijn **leerproces**. Het biedt me de mogelijkheid om terug te kijken en te zien hoe mijn vaardigheden zich ontwikkeld hebben, zonder de oorspronkelijke versie te veranderen.
 
-***
+### Functionaliteit:
 
-## Code snippets:
+- Warehouse-configuratie -> Instellen van testomgevingen met JSON-bestanden.
+- Itembeheer -> Toevoegen, bewerken en opslaan van artikelen in een magazijnconfiguratie.
+- Command-line interface -> Ondersteuning voor handmatige invoer en een menu-interface.
 
-### Code:
-####  Determine the number of iterations needed for each changing part of the label:
-*(Parse and calculate the number of iterations.)*
+#### **Beschikbare commando's:**
+De tool bevat verschillende commando's waarmee de gebruiker interactie heeft met de JSON-bestanden en API:
+
+- help → Toont een lijst met beschikbare commando's.
+- json.read → Leest een JSON-configuratiebestand in en stuurt het naar de API om een test-warehouse op te zetten.
+- json.write → Slaat gewijzigde warehouse-instellingen op als een JSON-bestand.
+- item.read → Leest een JSON-bestand met itemgegevens en vult het warehouse met testartikelen.
+- item.write → Slaat de itemconfiguratie op als een JSON-bestand.
+
+Wanneer een ongeldig commando wordt ingevoerd, wordt de gebruiker automatisch doorgestuurd naar de help-sectie.
+
+---
+
+## Vereisten/Ontwikkeling:
+De API die in dit project is gebruikt, was specifiek ontwikkeld voor het stagebedrijf(En kan daardoor dit programma niet meer testen). Voor ontwikkeling en testen werd gebruikgemaakt van `Docker`.
+
+- De applicatie begon als een menu-gebaseerde console-applicatie, maar later is een directe commandline-interface toegevoegd voor efficiënter gebruik na feedback van het team.
+
+- Versiebeheer: Ontwikkeling gebeurde eerst met Bitbucket via Sourcetree, later is de code overgezet naar GitHub om al mijn projecten bij elkaar te houden.
+
+- In dit project heb ik veel geleerd over C#, werken met SCRUM en waardevolle werkervaring opgedaan binnen een bedrijfsomgeving.
+
+---
+
+##  Voorbeeld code:
+Hieronder enkele codefragmenten uit het project.
+
+####  Iteraties berekenen voor labelwijzigingen:
 ```C#
 int numIterations = 1;
 for (int i = 3; i >= 0; i--)
@@ -56,8 +60,7 @@ for (int i = 3; i >= 0; i--)
 }
 ```
 
-####  Get/delete example, used multiple times for different API calls:
-*(This code here is for "Zones", but it is also used for things like Carriers, Locations and Items. It is placed inside a loop to delete the whole warehouse, like a reset.)*
+####  API-aanroep voor ophalen en verwijderen van zones:
 ```C#
 var zoneResponse = await client.GetAsync("https://localhost:8080/zones");
 zoneResponse.EnsureSuccessStatusCode();
@@ -71,8 +74,7 @@ foreach (var zone in zoneDelete)
 Console.WriteLine("Zones deleted");
 ```
 
-#### Retrieve positionid that belongs to the location:
-*(Gets location of the positionid.)*
+#### Haal positieId op die hoort bij de locatie:
 ```C#
 static async Task<string> RetrievePositionIdForLocation(HttpClient httpClient, string locationsUrl, string locationId)
 {
@@ -93,8 +95,7 @@ static async Task<string> RetrievePositionIdForLocation(HttpClient httpClient, s
 }
 ```
 
-#### Writes JSON file:
-*(A piece of code that writes the JSON files needed for testing and backing up.)*
+#### JSON-bestand schrijven:
 ```C#
 // 
 if (locationsArray.HasValues)
@@ -122,8 +123,7 @@ else
 }
 ```
 
-#### Loop through all carriertypes and write them into a list:
-*(Loops through all carrietypes, this is used for multiple purposes so it lists the items needed for putting inside of the API.)*
+#### Loop door alle carriertypes en schrijf het in een lijst:
 ```C#
 var carrierTypes = new List<CarrierTypes.Root>();
 foreach (var carriertype in JArray.Parse(getResponseString))
@@ -148,8 +148,8 @@ foreach (var carriertype in JArray.Parse(getResponseString))
 }
 ```
 
-#### A snippet that removes an SSL error:
-*(Because of some circumstances inside the code and API caused the API to not work correctly or completely not, so i put in a bit of "unsafe" code to remove the SSL check alltogether.)*
+#### Verwijder SSL error:
+*Dit voorkomt een error die zorgt dat ik niet kon connecten met de API, nu weet ik hoe het komt maar toen had ik deze code toegevoegd als oplossing.*
 ```C#
 var handler = new HttpClientHandler
 {
@@ -160,39 +160,10 @@ client.DefaultRequestHeaders.Accept.Clear();
 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 ```
 
+---
 
-### Models:
-#### Example of some classes, picked from multiple files:
-*(It contains some different types of classes containing, type, limitations and zones. just examples from different files.)*
-```C#
-        public class Type
-        {
-            public string Id { get; set; }
-            public string LabelPattern { get; set; }
-            public Dimensions Dimensions { get; set; }
-            public Limitations Limitations { get; set; }
-            public List<string> PositionLabels { get; set; }
-        }
-
-        public class Limitations
-        {
-            [JsonProperty("maxWeight")]
-            public int MaxWeight { get; set; }
-            [JsonProperty("maxVolume")]
-            public int MaxVolume { get; set; }
-        }
-
-        public class Zones
-        {
-            public string? Id { get; set; }
-            public Identifiers? Identifiers { get; set; }
-            public List<LocationRange> Locations { get; set; }
-        }
-```
-
-### Jsons:
-#### example of item JSON, filled with **FAKE** test-data:
-*(itemconfig, the locations are for what label the location has, items are for what articles and how much are in this specific location, the ID is for API purposes.)*
+## JSON Voorbeelden:
+#### Voorbeeld van een item JSON (met NEP-testdata):
 ```json
 {
     "itemConfig": {
@@ -226,8 +197,7 @@ client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("app
 }
 ```
 
-#### example of a warehouse JSON, filled with **FAKE** test-data:
-*(It configures: Carriertypes, Locationtypes, Articletypes, the layout and it has content options.)*
+#### Voorbeeld van een warehouse JSON (met NEP-testdata):
 ```json
 {
     "config": {
@@ -306,5 +276,14 @@ client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("app
 }
 ```
 
+---
 
-***
+## Beperkingen
+
+- De applicatie kan niet functioneren zonder toegang tot de API.
+
+- Ontwikkeld als testomgeving en niet bedoeld voor productief gebruik.
+
+- Ik heb overwogen om een lokale databaseversie te implementeren voor verdere ontwikkeling, maar heb uiteindelijk besloten mijn focus op andere projecten te richten die grotere uitdagingen en prioriteit hadden. Daarnaast wil ik dit project, zoals eerder aangegeven, behouden zoals het was aan het einde van mijn stage, omdat het voor mij waardevol is om het als referentie te houden voor mijn voortgang en leerproces.
+
+---
